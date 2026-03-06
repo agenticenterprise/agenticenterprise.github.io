@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login & Register</title>
+
+<script>
+function registerUser() {
+
+let username = document.getElementById("reg_username").value;
+let password = document.getElementById("reg_password").value;
+
+let xhr = new XMLHttpRequest();
+xhr.open("POST","register.php",true);
+xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+xhr.onload = function(){
+document.getElementById("reg_result").innerHTML = this.responseText;
+};
+
+xhr.send("username="+username+"&password="+password);
+}
+
+
+function loginUser() {
+
+let username = document.getElementById("log_username").value;
+let password = document.getElementById("log_password").value;
+
+let xhr = new XMLHttpRequest();
+xhr.open("POST","login.php",true);
+xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+xhr.onload = function(){
+document.getElementById("log_result").innerHTML = this.responseText;
+};
+
+xhr.send("username="+username+"&password="+password);
+}
+</script>
+
+</head>
+<body>
+
+<h2>Register</h2>
+
+<input type="text" id="reg_username" placeholder="Username">
+<br><br>
+
+<input type="password" id="reg_password" placeholder="Password">
+<br><br>
+
+<button onclick="registerUser()">Register</button>
+
+<p id="reg_result"></p>
+
+
+<hr>
+
+
+<h2>Login</h2>
+
+<input type="text" id="log_username" placeholder="Username">
+<br><br>
+
+<input type="password" id="log_password" placeholder="Password">
+<br><br>
+
+<button onclick="loginUser()">Login</button>
+
+<p id="log_result"></p>
+
+</body>
+</html>

@@ -7,6 +7,7 @@
 function registerUser() {
 
 let email = document.getElementById("reg_email").value;
+let name = document.getElementById("reg_name").value;
 let password = document.getElementById("reg_password").value;
 
 let xhr = new XMLHttpRequest();
@@ -17,7 +18,7 @@ xhr.onload = function(){
 document.getElementById("reg_result").innerHTML = this.responseText;
 };
 
-xhr.send("email="+email+"&password="+password);
+xhr.send("name="+name+"email="+email+"&password="+password);
 }
 
 
@@ -42,7 +43,8 @@ xhr.send("email="+email+"&password="+password);
 <body>
 
 <h2>Register</h2>
-
+<input type="text" id="reg_name" placeholder="name">
+<br><br>
 <input type="text" id="reg_email" placeholder="email">
 <br><br>
 

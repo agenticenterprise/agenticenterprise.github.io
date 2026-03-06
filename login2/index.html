@@ -274,7 +274,7 @@ document.getElementById('registerForm').addEventListener('submit', e => {
   if (name.length < 2) return showMessage('registerMessage', 'Name is too short');
   if (!email.includes('@') || email.length < 6) return showMessage('registerMessage', 'Please enter a valid email');
 
-  const registerUrl = 'https://enterpriselogin1.vercel.app/api/auth/register/';
+  const registerUrl = 'https://enterpriselogin1.vercel.app/api/auth/register';
 
   sendXHR('POST', registerUrl, { name, email, password }, (status, res, raw) => {
     if (status >= 200 && status < 300 && (res.success || res.message?.includes('success') || res.message?.includes('created'))) {

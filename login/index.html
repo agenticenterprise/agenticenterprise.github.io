@@ -10,7 +10,7 @@ let username = document.getElementById("reg_username").value;
 let password = document.getElementById("reg_password").value;
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST","register.php",true);
+xhr.open("POST","https://enterpriselogin1.vercel.app/register",true);
 xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
 xhr.onload = function(){
@@ -27,7 +27,7 @@ let username = document.getElementById("log_username").value;
 let password = document.getElementById("log_password").value;
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST","login.php",true);
+xhr.open("POST","https://enterpriselogin1.vercel.app/login",true);
 xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
 xhr.onload = function(){

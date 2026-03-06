@@ -6,7 +6,7 @@
 <script>
 function registerUser() {
 
-let username = document.getElementById("reg_username").value;
+let email = document.getElementById("reg_email").value;
 let password = document.getElementById("reg_password").value;
 
 let xhr = new XMLHttpRequest();
@@ -17,13 +17,13 @@ xhr.onload = function(){
 document.getElementById("reg_result").innerHTML = this.responseText;
 };
 
-xhr.send("username="+username+"&password="+password);
+xhr.send("email="+email+"&password="+password);
 }
 
 
 function loginUser() {
 
-let username = document.getElementById("log_username").value;
+let email = document.getElementById("log_email").value;
 let password = document.getElementById("log_password").value;
 
 let xhr = new XMLHttpRequest();
@@ -34,7 +34,7 @@ xhr.onload = function(){
 document.getElementById("log_result").innerHTML = this.responseText;
 };
 
-xhr.send("username="+username+"&password="+password);
+xhr.send("email="+email+"&password="+password);
 }
 </script>
 
@@ -43,7 +43,7 @@ xhr.send("username="+username+"&password="+password);
 
 <h2>Register</h2>
 
-<input type="text" id="reg_username" placeholder="Username">
+<input type="text" id="reg_email" placeholder="email">
 <br><br>
 
 <input type="password" id="reg_password" placeholder="Password">
@@ -59,7 +59,7 @@ xhr.send("username="+username+"&password="+password);
 
 <h2>Login</h2>
 
-<input type="text" id="log_username" placeholder="Username">
+<input type="text" id="log_email" placeholder="email">
 <br><br>
 
 <input type="password" id="log_password" placeholder="Password">

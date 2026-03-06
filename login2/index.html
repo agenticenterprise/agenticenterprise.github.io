@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Register • Vanilla JS + XHR</title>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --danger: #ef4444;
+      --success: #10b981;
+      --gray: #6b7280;
+      --light: #f3f4f6;
+      --dark: #1f2937;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      width: 100%;
+      max-width: 420px;
+      overflow: hidden;
+    }
+
+    .form-wrapper {
+      padding: 2.5rem 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.8rem;
+      color: var(--dark);
+      font-size: 1.85rem;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 500;
+      color: var(--gray);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab.active {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: #374151;
+      font-size: 0.97rem;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.95rem 1.1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+    }
+
+    button {
+      width: 100%;
+      padding: 1.05rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.25s;
+      margin-top: 0.6rem;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    .message {
+      margin-top: 1.3rem;
+      text-align: center;
+      font-size: 0.96rem;
+      min-height: 1.3em;
+    }
+
+    .success { color: var(--success); }
+    .error   { color: var(--danger); }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-wrapper">
+
+    <div class="tabs">
+      <div class="tab active" data-form="login">Login</div>
+      <div class="tab" data-form="register">Register</div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" name="email" required autocomplete="email" placeholder="name@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" required autocomplete="current-password">
+      </div>
+
+      <button type="submit">Sign In</button>
+
+      <div class="message" id="loginMessage"></div>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="registerForm" class="hidden">
+      <div class="form-group">
+        <label for="reg-name">Full Name</label>
+        <input type="text" id="reg-name" name="name" required minlength="2" placeholder="John Doe">
+      </div>
+
+      <div class="form-group">
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" name="email" required autocomplete="email" placeholder="john.doe@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" name="password" required minlength="6">
+      </div>
+
+      <button type="submit">Create Account</button>
+
+      <div class="message" id="registerMessage"></div>
+    </form>
+
+  </div>
+</div>
+
+<script>
+// ─── Tab Switching ────────────────────────────────────────────
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const isLogin = tab.dataset.form === 'login';
+    document.getElementById('loginForm').classList.toggle('hidden', !isLogin);
+    document.getElementById('registerForm').classList.toggle('hidden', isLogin);
+  });
+});
+
+// ─── Show message helper ──────────────────────────────────────
+function showMessage(elId, text, isSuccess = false) {
+  const msg = document.getElementById(elId);
+  msg.textContent = text;
+  msg.className = 'message ' + (isSuccess ? 'success' : 'error');
+}
+
+// ─── Clear message when user starts typing ───────────────────
+function clearOnInput(formId, msgId) {
+  const form = document.getElementById(formId);
+  form?.querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('input', () => {
+      const msg = document.getElementById(msgId);
+      msg.textContent = '';
+      msg.className = 'message';
+    });
+  });
+}
+
+clearOnInput('loginForm', 'loginMessage');
+clearOnInput('registerForm', 'registerMessage');
+
+// ─── XHR helper ───────────────────────────────────────────────
+function sendXHR(method, url, data, callback) {
+  const xhr = new XMLHttpRequest();
+  xhr.open(method, url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+
+  xhr.onload = () => {
+    let res;
+    try { res = JSON.parse(xhr.responseText); }
+    catch { res = { success: false, message: 'Invalid server response' }; }
+    callback(xhr.status, res);
+  };
+
+  xhr.onerror = () => callback(0, { success: false, message: 'Network error' });
+
+  xhr.send(JSON.stringify(data));
+}
+
+// ─── LOGIN handler ────────────────────────────────────────────
+document.getElementById('loginForm').addEventListener('submit', e => {
+  e.preventDefault();
+
+  const email    = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+
+  sendXHR('POST', 'https://enterpriselogin1.vercel.app/api/auth/login', { email, password }, (status, res) => {
+    if (status === 200 && res.success) {
+      showMessage('loginMessage', 'Login successful! Redirecting...', true);
+      setTimeout(() => { window.location.href = '/dashboard'; }, 1400);
+    } else {
+      showMessage('loginMessage', res.message || 'Invalid email or password');
+    }
+  });
+});
+
+// ─── REGISTER handler ─────────────────────────────────────────
+document.getElementById('registerForm').addEventListener('submit', e => {
+  e.preventDefault();
+
+  const name     = document.getElementById('reg-name').value.trim();
+  const email    = document.getElementById('reg-email').value.trim();
+  const password = document.getElementById('reg-password').value;
+
+  // Very basic client-side validation
+  if (name.length < 2) return showMessage('registerMessage', 'Name is too short');
+  if (!email.includes('@') || email.length < 6) return showMessage('registerMessage', 'Please enter a valid email');
+
+  sendXHR('POST', 'https://enterpriselogin1.vercel.app/api/auth/register', { name, email, password }, (status, res) => {
+    if (status === 201 && res.success) {
+      showMessage('registerMessage', 'Account created! You can now log in.', true);
+      setTimeout(() => document.querySelector('.tab[data-form="login"]').click(), 1800);
+    } else {
+      showMessage('registerMessage', res.message || 'Registration failed');
+    }
+  });
+});
+</script>
+</body>
+</html>

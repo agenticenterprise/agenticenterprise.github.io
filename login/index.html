@@ -18,7 +18,11 @@ xhr.onload = function(){
 document.getElementById("reg_result").innerHTML = this.responseText;
 };
 
-xhr.send("name="+name+"&email="+email+"&password="+password);
+xhr.send(JSON.stringify({
+name:name,
+email:email,
+password:password
+}));
 }
 
 

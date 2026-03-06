@@ -15,11 +15,7 @@
       --dark: #1f2937;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
       font-family: system-ui, -apple-system, sans-serif;
@@ -40,9 +36,7 @@
       overflow: hidden;
     }
 
-    .form-wrapper {
-      padding: 2.5rem 2rem;
-    }
+    .form-wrapper { padding: 2.5rem 2rem; }
 
     h2 {
       text-align: center;
@@ -73,9 +67,7 @@
       font-weight: 600;
     }
 
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
+    .form-group { margin-bottom: 1.5rem; }
 
     label {
       display: block;
@@ -114,9 +106,7 @@
       margin-top: 0.6rem;
     }
 
-    button:hover {
-      background: var(--primary-dark);
-    }
+    button:hover { background: var(--primary-dark); }
 
     .message {
       margin-top: 1.3rem;
@@ -128,8 +118,16 @@
     .success { color: var(--success); }
     .error   { color: var(--danger); }
 
-    .hidden {
-      display: none;
+    .hidden { display: none; }
+
+    .note {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #fef3c7;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #92400e;
+      text-align: center;
     }
   </style>
 </head>
@@ -143,7 +141,7 @@
       <div class="tab" data-form="register">Register</div>
     </div>
 
-    <!-- LOGIN FORM -->
+    <!-- LOGIN FORM (placeholder – change URL if you have real endpoint) -->
     <form id="loginForm">
       <div class="form-group">
         <label for="login-email">Email</label>
@@ -158,9 +156,10 @@
       <button type="submit">Sign In</button>
 
       <div class="message" id="loginMessage"></div>
+      <div class="note">Login endpoint not provided – using placeholder. Update the URL in JS if available.</div>
     </form>
 
-    <!-- REGISTER FORM -->
+    <!-- REGISTER FORM – points to your real Vercel endpoint -->
     <form id="registerForm" class="hidden">
       <div class="form-group">
         <label for="reg-name">Full Name</label>
@@ -205,7 +204,7 @@ function showMessage(elId, text, isSuccess = false) {
   msg.className = 'message ' + (isSuccess ? 'success' : 'error');
 }
 
-// ─── Clear message when user starts typing ───────────────────
+// ─── Clear message on input ───────────────────────────────────
 function clearOnInput(formId, msgId) {
   const form = document.getElementById(formId);
   form?.querySelectorAll('input').forEach(inp => {
@@ -220,42 +219,51 @@ function clearOnInput(formId, msgId) {
 clearOnInput('loginForm', 'loginMessage');
 clearOnInput('registerForm', 'registerMessage');
 
-// ─── XHR helper ───────────────────────────────────────────────
+// ─── XHR helper (withCredentials = true like in your Postman) ─
 function sendXHR(method, url, data, callback) {
   const xhr = new XMLHttpRequest();
   xhr.open(method, url, true);
+  xhr.withCredentials = true;           // ← important if using cookies/sessions
   xhr.setRequestHeader('Content-Type', 'application/json');
 
   xhr.onload = () => {
     let res;
-    try { res = JSON.parse(xhr.responseText); }
-    catch { res = { success: false, message: 'Invalid server response' }; }
-    callback(xhr.status, res);
+    try {
+      res = JSON.parse(xhr.responseText);
+    } catch (e) {
+      res = { success: false, message: 'Invalid JSON response from server' };
+    }
+    callback(xhr.status, res, xhr.responseText);
   };
 
-  xhr.onerror = () => callback(0, { success: false, message: 'Network error' });
+  xhr.onerror = () => {
+    callback(0, { success: false, message: 'Network error (CORS, blocked, offline?)' }, '');
+  };
 
   xhr.send(JSON.stringify(data));
 }
 
-// ─── LOGIN handler ────────────────────────────────────────────
+// ─── LOGIN handler (placeholder) ──────────────────────────────
 document.getElementById('loginForm').addEventListener('submit', e => {
   e.preventDefault();
 
   const email    = document.getElementById('login-email').value.trim();
   const password = document.getElementById('login-password').value;
 
-  sendXHR('POST', 'https://enterpriselogin1.vercel.app/api/auth/login', { email, password }, (status, res) => {
+  // Change this URL to your real login endpoint when you have it
+  const loginUrl = 'https://enterpriselogin1.vercel.app/api/auth/login'; // ← placeholder
+
+  sendXHR('POST', loginUrl, { email, password }, (status, res, raw) => {
     if (status === 200 && res.success) {
       showMessage('loginMessage', 'Login successful! Redirecting...', true);
       setTimeout(() => { window.location.href = '/dashboard'; }, 1400);
     } else {
-      showMessage('loginMessage', res.message || 'Invalid email or password');
+      showMessage('loginMessage', res.message || raw || `Error ${status}`);
     }
   });
 });
 
-// ─── REGISTER handler ─────────────────────────────────────────
+// ─── REGISTER handler – using your real Vercel URL ───────────
 document.getElementById('registerForm').addEventListener('submit', e => {
   e.preventDefault();
 
@@ -263,16 +271,19 @@ document.getElementById('registerForm').addEventListener('submit', e => {
   const email    = document.getElementById('reg-email').value.trim();
   const password = document.getElementById('reg-password').value;
 
-  // Very basic client-side validation
   if (name.length < 2) return showMessage('registerMessage', 'Name is too short');
   if (!email.includes('@') || email.length < 6) return showMessage('registerMessage', 'Please enter a valid email');
 
-  sendXHR('POST', 'https://enterpriselogin1.vercel.app/api/auth/register', { name, email, password }, (status, res) => {
-    if (status === 201 && res.success) {
+  const registerUrl = 'https://enterpriselogin1.vercel.app/api/auth/register/';
+
+  sendXHR('POST', registerUrl, { name, email, password }, (status, res, raw) => {
+    if (status >= 200 && status < 300 && (res.success || res.message?.includes('success') || res.message?.includes('created'))) {
       showMessage('registerMessage', 'Account created! You can now log in.', true);
       setTimeout(() => document.querySelector('.tab[data-form="login"]').click(), 1800);
     } else {
-      showMessage('registerMessage', res.message || 'Registration failed');
+      // Show whatever the server actually returns
+      const errorMsg = res.message || res.error || raw || `Server error (${status})`;
+      showMessage('registerMessage', errorMsg);
     }
   });
 });

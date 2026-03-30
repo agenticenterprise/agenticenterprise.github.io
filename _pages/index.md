@@ -1,6 +1,6 @@
 ---
 layout: index
-title: Home
+title: TailwindAdmin TailwindCSS HTML Admin Template
 permalink: /
 ---
 

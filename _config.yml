@@ -1,0 +1,132 @@
+# -------------------------------
+# Site Settings
+# -------------------------------
+title: "Your Site Name"
+description: "A short description of your site for SEO"
+url: "https://yoursite.com"
+baseurl: "" # leave empty unless using subpath
+lang: "en"
+
+# Author
+author:
+  name: "Your Name"
+  email: "your@email.com"
+
+# -------------------------------
+# Build Settings
+# -------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: /:collection/:name/
+
+timezone: Europe/London
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# -------------------------------
+# Collections
+# -------------------------------
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults (auto apply front matter)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+
+# -------------------------------
+# Plugins
+# -------------------------------
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# -------------------------------
+# SEO Settings
+# -------------------------------
+twitter:
+  username: yourhandle
+  card: summary_large_image
+
+social:
+  name: "Your Name"
+  links:
+    - https://twitter.com/yourhandle
+    - https://github.com/yourusername
+
+# -------------------------------
+# Navigation (use with _data/nav.yml ideally)
+# -------------------------------
+nav:
+  - name: "Home"
+    link: /
+  - name: "Blog"
+    link: /posts/
+  - name: "Projects"
+    link: /projects/
+  - name: "About"
+    link: /about/
+
+# -------------------------------
+# Pagination
+# -------------------------------
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# -------------------------------
+# Excludes (don’t build these)
+# -------------------------------
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# -------------------------------
+# Includes (force include)
+# -------------------------------
+include:
+  - _pages
+
+# -------------------------------
+# Development Settings
+# -------------------------------
+livereload: true
+incremental: true
+
+# -------------------------------
+# Custom Variables (your own use)
+# -------------------------------
+brand_color: "#0d6efd"
+logo: "/assets/images/logo.png"
+
+# Feature flags
+features:
+  dark_mode: true
+  search: false
+  comments: false

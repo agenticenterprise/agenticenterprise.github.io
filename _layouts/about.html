@@ -33,170 +33,20 @@
 
 			<div class="w-full" role="main">
 				<!-- Announcement Bar Start -->
-				<div id="announcement-bar"
-					class="flex items-center justify-center py-1 cursor-pointer relative before:absolute before:h-full before:w-[200px] before:bg-no-repeat before:bg-cover before:bg-[url('/assets/images/frontend-pages/background/transparent-elilpse.png')] lg:before:block before:hidden before:top-0 before:right-0 after:absolute after:bg-[url('/assets/images/frontend-pages/background/right-ellipse.png')] lg:after:block after:hidden after:h-full after:w-[325px] after:right-[21%] after:1top-1 after:end-1/2 overflow-hidden gap-4 bg-primary">
-					<button
-						class="text-xs font-semibold py-1.5 px-2.5 rounded-lg bg-white/15 text-white hover:bg-white hover:text-primary">New</button>
-					<p class="text-13 text-white font-medium">
-						Frontend Pages Added
-					</p>
-					<div class="absolute top-0 start-0 lg:block hidden">
-						<img src="./assets/images/left-ellipse.png" alt="ellipse" class="" />
-					</div>
-					<div id="close-btn"
-						class="h-6 w-6 rounded-full bg-secondary absolute top-1/2 -translate-y-1/2 end-3 text-white flex items-center justify-center hover:bg-secondaryemphasis">
-						<i class="ti ti-x  shrink-0 text-lg text-white"></i>
-					</div>
-				</div>
+				
 				<!-- Announcement Bar End -->
 				<!--  Header Start -->
-				<header id='main-header'
-					class="sticky top-header top-0 inset-x-0 z-5 flex flex-wrap md:justify-start md:flex-nowrap text-sm px-0 sm:py-6 py-3">
-					<div class="container flex items-center justify-between">
-
-						<div class="order-2">
-							<div class="brand-logo d-flex align-items-center justify-center">
-							  <a href="./index.html" class="text-nowrap logo-img">
-							    <img src="./assets/images/dark-logo.svg" class="dark:hidden block rtl:hidden" alt="Logo-Dark" />
-							    <img src="./assets/images/light-logo.svg" class="dark:block hidden rtl:hidden rtl:dark:hidden"
-							      alt="Logo-light" />
-							
-							    <img src="./assets/images/dark-logo-rtl.svg" class="dark:hidden hidden rtl:block rtl:dark:hidden"
-							      alt="Logo-Dark" />
-							    <img src="./assets/images/light-logo-rtl.svg" class="dark:hidden hidden rtl:hidden rtl:dark:block"
-							      alt="Logo-light" />
-							  </a>
-							</div>						</div>
-						<!---Lp Mobile Toggle Icons--->
-						<div class="xl:hidden order-1">
-							<a class="rounded-full icon-hover h-10 w-10 flex justify-center text-link dark:text-darklink items-center hover:text-primary  relative hover:bg-lightprimary dark:hover:bg-darkprimary "
-								data-hs-overlay="#application-sidebar-lp">
-								<i class="ti ti-menu-2 text-xl relative "></i>
-							</a>
-						</div>
-
-						<!-- Menu-->
-						<ul class="xl:flex hidden items-center gap-2 order-3">
-							<li>
-								<a href="./frontend-aboutpage.html"
-									class='text-[15px] py-[6px] px-4 bg-lightprimary dark:bg-lightprimary text-primary dark:text-primary rounded-md hover:text-primary font-medium'>About
-									Us</a>
-							</li>
-							<li>
-								<a href="./frontend-blogpage.html"
-									class='text-[15px] py-[6px] px-4 text-link dark:text-darklink hover:text-primary font-medium'>Blog</a>
-							</li>
-							<li>
-								<a href="./frontend-portfoliopage.html"
-									class='text-[15px] py-[6px] px-4 flex items-center text-link dark:text-darklink gap-2 hover:text-primary font-medium'>
-									Portfolio
-									<span
-										class="inline-flex items-center gap-x-1.5 py-1 px-2 rounded-md text-xs font-medium bg-lightprimary! dark:bg-darkprimary! text-primary dark:text-primary">New</span>
-								</a>
-							</li>
-							<li>
-								<a href="./index.html"
-									class='text-[15px] py-[6px] px-4 text-link dark:text-darklink hover:text-primary font-medium'>Dashboard</a>
-							</li>
-							<li>
-								<a href="./frontend-pricingpage.html"
-									class='text-[15px] py-[6px] px-4 text-link dark:text-darklink hover:text-primary font-medium'>Pricing</a>
-							</li>
-							<li>
-								<a href="./frontend-contactpage.html"
-									class='text-[15px] py-[6px] px-4 text-link dark:text-darklink hover:text-primary font-medium'>Contact</a>
-							</li>
-
-						</ul>
-						<a href="./authentication-login.html" class="btn order-4">Login</a>
-					</div>
-				</header>
+				{% include header1.html %}
 
 				<!-- Main Content -->
 				<div class="max-w-full">
 
 					<!-- Hero Section Star -->
-					<div class="wrapper lg:pt-6 pt-0 bg-lightprimary dark:bg-lightprimary">
-						<div class="container-md px-4 lg:py-4 py-0">
-							<div class="grid grid-cols-12 gap-6 lg:py-24 py-12">
-								<div class="lg:col-span-6 col-span-12">
-									<h3 class="lg:text-5xl text-32 font-bold text-link dark:text-white leading-tight!">
-										Get to know TailwindAdmin Dashboard Template</h3>
-									<div class="flex flex-wrap mt-6 gap-4">
-										<a href="./authentication-register.html" target="_blank"
-											class="btn bg-primary hover:bg-primaryemphasis text-white btn-md py-2.5 px-4 w-fit block">Create
-											An Account</a>
-										<a href="./frontend-aboutpage.html" target="_blank"
-											class="btn border border-primary bg-transparent text-primary hover:bg-primary dark:hover:bg-primary hover:text-white rounded-md py-2.5 px-4 w-fit block">
-											View Open Position</a>
-									</div>
-								</div>
-								<div class="lg:col-span-6 col-span-12">
-									<p class="text-base text-lightmuted dark:text-darklink leading-loose lg:ps-16 ps-0">
-										Do you need a highly customizable and developer friendly premium tailwind html
-										admin template packed with numerous features? <span
-											class="text-link font-semibold dark:text-white">TailwindAdmin Tailwind Html
-											Admin</span> Template has everything you need. This <span
-											class="text-link font-semibold dark:text-white">Tailwind</span> based admin
-										template is designed in accordance with industry standards and best practices to
-										provide you.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					{% include header2.html %}
 					<!-- Hero Section end -->
 
 					<!-- Process Start -->
-					<div class="container-md px-4 lg:py-24 py-12">
-						<h3
-							class="lg:text-40 text-32 font-bold text-link dark:text-white text-center mb-12 leading-tight">
-							The hassle-free setup process</h3>
-						<div class="grid grid-cols-12 gap-6">
-							<div class="lg:col-span-3 md:col-span-6 col-span-12">
-								<div class='py-12 px-4 justify-center rounded-base bg-lightwarning dark:bg-darkwarning'>
-									<img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%20width='48px'%20height='48px'%3e%3cpath%20fill='%23f5bc00'%20d='M44,41H4V10h40V41z'/%3e%3cpolygon%20fill='%23eb7900'%20points='44,26%2024,26%204,26%204,10%2044,10'/%3e%3cpath%20fill='%23eb7900'%20d='M17,26h-6v3h6V26z'/%3e%3cpath%20fill='%23eb7900'%20d='M37,26h-6v3h6V26z'/%3e%3crect%20width='14'%20height='3'%20x='17'%20y='7'%20fill='%23f5bc00'/%3e%3cpath%20fill='%23eb0000'%20d='M17,23h-6v3h6V23z'/%3e%3cpath%20fill='%23eb0000'%20d='M37,23h-6v3h6V23z'/%3e%3c/svg%3e" width="48" height="48" alt
-										class="mx-auto">
-									<h1 class="py-4 text-center font-bold text-link dark:text-white text-lg">Light &
-										Dark Color Schemes</h1>
-									<p class="text-lightmuted dark:text-darklink text-base font-normal text-center">
-										Choose your preferred visual style effortlessly.</p>
-								</div>
-							</div>
-							<div class="lg:col-span-3 md:col-span-6 col-span-12">
-								<div
-									class='pt-12 px-4 justify-center rounded-base  bg-lightsecondary dark:bg-darksecondary'>
-									<h1 class="pb-4 text-center font-bold text-link dark:text-white text-lg px-3">12+
-										Ready to Use Application Designs</h1>
-									<p class="text-lightmuted  dark:text-darklink text-base font-normal text-center">
-										Instantly deployable designs for your applications./p>
-										<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAACQCAYAAAB+gdOQAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAzBSURBVHgB7d1PbBzlGcfxZ2Z2Z20SgxPbUEzSmpgG05I/kDQQhIqrllRCtMolEqpaOLUHOMChF7iQXODQVmoPlZB6ofTQSqgKolSqCBKpSkuBhCYB0QhqMIKYhtgktR2SXXs9nWeSNbvjtb1r786+7+z3IxnHaxM7Fz+/93mfeV9H0GCBs2HDHR29vbnc597azEz+gteRy7gCAKjZxfzsXDbXWSwUp2dnO/P5j1/9x0URJxA0jCNokH3eDbdNrymeL3RS8AGg8S4U8xdGj/VNiTxbFKwaAWDVAueG2+7pys7OrREAQNPNZM6d/89rr00KVoUAsCr7vMGt/+vxs44nAIDEFGaC4siJqyboBqwchWvFdmQHt7rrKf4AkDzPc9yr+i52bLtpY350dHROUDeK14royp/iDwCtpCHg7Hmv4+zpWy+KvMOAYJ0YVqtb4ND2BwAz6O9i/Z2sv5sFdSEA1EkH/ij+AGAO/Z18w223dwnqQgCoyz6PaX8AME92tnuN/o4W1IwAUIeB7WdImABgKD2LRVAzAkDt3E4v1ykAACN1SLaTWYDaEQBqtGH37pwAAIxVnM27ehS7oCYEgBplLuQIAABguGuuWeMLakIAqJH/uWQEAGC0KZnNCmpCAKiRv85juhQADOdnruR3dY0IADUqznLDHwCYTucABAAAAAAAAAAAAAAAoI2k+sSkffsDv9OXgYIrvblA1hZFetxA/DlHeKYfABA3FdaIqbBmfObPyfiFgow9u9+ZlpRKXQDQon9FTrYEgVwbFvp+AQBg5SbCUPBWGsNAagJAWeG/mRU+AKAJ3s3n5UhagkAqAsADTwY7KPwAgCR4Ikd/+6hzVCxndQB4cH+wdjIn3w3/2CMAACRnKuwG/MnmboC1AeD+J4LN4bvdrPoBAK0QFtDCjMjhPzzqjIqFrAwA2vIviuwQAABazNYtAesCAMUfAGAaG0OAVZcm3PdkMEDxBwCYRmvT5a1pa1gTAHTgzw/kLgEAwECBI3fsC2uVWMKaADCZk+8x8AcAMFUg4ucuPZlmBSsCgO77h++6BAAAs/X84FLNMp7xAUBb/+z7AwBs4Yls0dNpxXDGB4Cw9b9TAACwhG4FZHOyRQxndAB48NIwhVVTlQAA2NAFMDoATPvc5gcAsI8NXQCjA8CcY34LBQCAajKBXCsGMzYAXG7/c8kPAMBK4SK23+RtAGMDAO1/AIDtXF8GxFDGBoAZVv8AAMu5BtcyYwNAxpVeAQDAYr5j7iF2xgaAIBBrzlMGAKCaIh2AFeHoXwCA1Rwx9w4bq64DBgDAJnoegAAAAAAAAAAAAAAAADSRIw0wsH24u8PN7nVcZ5t+KIFsdxzpDkS6BQAArFwgo+IEo2HJPhbMBcdlbubwyWOHR2WVVhwAtOhfkfEfDiQYDv+aYQEAAEnRMPCr1YSBugNAqfCHf3yEFT4AAK3lBM7Tc8X8gXqDQF0B4Gs79zwuFH4AAIwTFvT97xx58UAdX7+8oe3DA07WP6h7+wIAAMzkyGgwU/hWLd2AZU8CHNq15wE34/+L4g8AgOECGXDCmr15x569y32pt9Qnh8KWvxPIL8M/dggAALBBh+vIfVf3D8qZsZG/LvZFiwaAqPiH+wkCAABsNLxUCKgaALR1EKaHpwQAANhsuHfD4Oj4qZHj8U8sGALUgT/d82fSHwCAVDgXzBZuiQ8GLhgCdLL+yxR/AABSo9vJ+AfjL1ZsAVze9192chAAAFjlS1f3DzpnxkYOl16Y3wKInvXP+B8IAABIo3MXZgvXjx47fE4/mN8CcL3c4wIAANJKj/J/pPRB1AFg9Q8AQFuY7wJc6gC42WEBAABpN98FiAKA4zoPCwAASL1Agrv0vUP7HwCA9hJuA6xzaf8DANBeOtzsXtdxuOUPAIB2orXfDRzZJgAAoH04zoDrBM6AAACA9hEu/t3wPwMCAADaRyDdrgAAgHZDAAAAoB0RAAAAaEMEAAAA2hABAACANuM4jmQEAAC0BS38rueJF74RAAAAaANa+DOZTBQCFAEAAIAUi9r92ay4buWuPwEAAICU0la/V7bqL0cAAAAgZRZb9ZcjAAAAkCJLrfrLEQAAAEgBLfheRif8ayvtBAAAACynxT/r+8uu+ssRAAAAsFitLf84AgAAAJbKZDM1t/wX/L8CAACsUsuU/3IIAAAAWGQl+/3VcBkQAACWaFTxV3QAAACwgLb7te3fiOKvCAAAABguur0vLP6NxBYAAAAGa0bxV3QAAAAwlF7fq8/4NwMdAAAADNTM4q8IAAAAGKZ0ul8zEQAAADBIs/b84wgAAAAYwk2o+EffSwAAQMtFx/tmkpvNJwAAANBijTzhr1YEAAAAWqgVxV8RAAAAaCGd9k+6+CsCAAAALRI96+950goEAAAAWiCJZ/2XQgAAACBh2vJvZfFXBAAAABLUqqG/OAIAAAAJ8jJey4u/IgAAAJAQPenP88y4iJcAAABAApI+6W85BAAAABKgZ/yb0PovMSeKAGi4nO9LT8866e1ZL3293dK7fr344WtXdq2p+LrJqfMyNT0t+UJBxsfPyqlPTsvExNnoYwCrp4/8ua5Za24CAJAyWvRv3DwomwY2hAV/neRy/rL/jwaCUijY9JWN869rEDj57vtyaux0FBAA1M+ER/6qIQAAKdF/7TVy0+ZNcn1YwGsp+rW4Lvw79U2dfHdEXj/6FkEAqFOrjvpdjnPTzj2BALBW19q18u3h3fOFutkIAkDtdOo/G+79m4gAAFhKW/1btwzJtq8PLbni1/39sU/+K2fCPf2xsKWv+/qF8C2fn5n/mi7dAgiDhM4L9PWsD7sJV4dbAmuX/P6vv3lC3jh6QgBUZ8qBP4shAAAW0lX/PXu+GQ33VZPPF+TE2yfl3++NyFQYAFb0PcJQoNsJ224eWjQMTE1Ny8EXXqIbAFQRXfRj4N5/CQEAsMxQuM9/5+07q676dVjvjXBlrsN7jf6e37h1a9UgoB0F7QaceOukALhEV/1+LicmIwAAFtEivGvH1gWv60r8lX8ekfdHP5ZmWioIsCUAfEGf+W/VNb+18vr6B/cLAOMtVvy11f/iy3+T8Ylz0mzjE2flgw8/kpyfC7cf1lV8LhpCDLc6xxrcfQBsE+39Gzr4V44AAFhgseL/yqtHopV3sTgnSSkUZqIQoIOEX97YX/E5QgAgRg/+lSMAAIbbevOQ3LHrlorXdMjvj8//JSzEzW35L+X0p+NREPjq4IBkylqdGgJ0KFC7BUC7cV3PqPP+l8JdAIDBdNp/162VK38t/s/9+ZARBVZ/hudeOLTgyOA7d++Mfnag3WSy9pyvRwAADLb33u8smPY3pfiXlEJAOT2j4J49d0XvgXahq38bWv8lBADAUNWm7XXP38TWuv5M+rOV0yFBPagIaBdexuyp/zgCAGCgqPUfG/rTS3mOv23us/b6s8XPAtBDhNgKQDvQm/5Mu+1vOQQAwEC7dmyp+Fif83/9zeNiOn0iYXLqi1MBdQtA7ykA0s41/Jn/aggAgGF0xTy0ebDiNS2sKz3SN0k6DPj3V49WvFZ+oyCQRtF1vwQAAKtVbfWv7X9bvP/hRwuOItYTBIG0Mvm8/6UQAACDLLb6t038SODrBzbyRADSyRHr9v5LCACAQa7rr2yV27b6Lzl1+drhEi3+N9IFQArZ9uhfOQIAYJB4q/yYwVP/yzkeeyJgU9gFANLG8+xs/ysCAGAIXSXHh+X0qN1G2Xvv3dFbUk6+N1LxsZ4LwDYA0kRX/q5r5+pfEQAAQ/TEbtfT9n8jJ/+fePyn0dvTT/1M+hOYyteffbLs59fiH79BELCZrcN/JQQAwBDx1f+pTz6VZtADhl56/hl56Mc/kmaLPw3QQwBAitg6/FdCAAAM0RcrjmcmPpNmeugnP5RDYRBo5rbAeOzf0EcAQEpo8bd1+K+EAAAYwo9d+jORwJn/2nUobQ00Y1tgLNYBYAsAaWHjyX9xBADAEPEz8yenpyUp2gVoxrZA/JpghgCRFra3/xUBADDElV1rKj5uxdG/pW2BRinkZyo+7uriYiDYLw3tf0UAANA08Q4AkAaul47SSQAAENGOw69/8zu5+/v3C4DFOY79+//K7ocYgRTT/fKkVtBvHD0ujx34xYLH9gBUsv3wn3IEAMAQemhO+RyAn8s2PQBowX/swM8XXN7TKF0L5hqSG2wEmsFJwfBfCQEAMEQhKvZlASCamG/eIKC2+5/5/cGmDhsufLIh+cFGoJG8FDz+V0IAAAxxZuJsxXPy+ox+M84CSLLdH3/un6FA2C4N0/8lBADAEJdOzfviNsBGn5qnrX713AuHJCnxf8P4ePMPNwKaJS2P/5X8HzWcOSOySTRGAAAAAElFTkSuQmCC' alt="image"
-											class="mx-auto px-6 mt-7.5" />
-								</div>
-							</div>
-							<div class="lg:col-span-3 md:col-span-6 col-span-12">
-								<div class='py-12 px-4 justify-center rounded-base bg-lightsuccess dark:bg-darksuccess'>
-									<img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%20width='48px'%20height='48px'%3e%3ccircle%20cx='20'%20cy='28'%20r='16'%20fill='%233ddab4'/%3e%3ccircle%20cx='31.584'%20cy='17.478'%20r='13.449'%20fill='%23f5bc00'/%3e%3cpolygon%20fill='%233ddab4'%20points='4.07,44%2019.909,44%2010.922,35.549'/%3e%3cpath%20fill='%2300b569'%20d='M20,12c-0.239,0-0.471,0.025-0.708,0.036c-0.739,1.665-1.157,3.504-1.157,5.443%20c0,7.428,6.021,13.449,13.449,13.449c1.484,0,2.907-0.25,4.242-0.693C35.929,29.502,36,28.76,36,28C36,19.163,28.837,12,20,12z'/%3e%3cpolygon%20fill='%23f5bc00'%20points='44.975,4.029%2031.661,4.029%2039.215,11.133'/%3e%3c/svg%3e" width="48" height="48" alt
-										class="mx-auto">
-
-									<h1 class="py-4 text-center font-bold text-link dark:text-white text-lg">Code
-										Improvements</h1>
-									<p class="text-lightmuted dark:text-darklink text-base font-normal text-center">
-										Benefit from improvements and optimizations.</p>
-								</div>
-							</div>
-							<div class="lg:col-span-3 md:col-span-6 col-span-12">
-								<div class='py-12 px-4 justify-center rounded-base bg-lighterror dark:bg-darkerror'>
-
-									<img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%20width='48px'%20height='48px'%3e%3cpolygon%20fill='%23f55376'%20points='37,6%2011,6%2011,30%2024,36%2037,42'/%3e%3cpolygon%20fill='%23f55376'%20points='11,6%2037,6%2037,30%2024,36%2011,42'/%3e%3cpolygon%20fill='%23eb0000'%20points='11,6%2011,30%2024,36%2031.5,32.538%2037,25%2037,6'/%3e%3cg%3e%3cpolygon%20fill='%23fadb00'%20points='37,29.768%2048,21%2026,21'/%3e%3cpolygon%20fill='%23fadb00'%20points='37,29.732%2043.957,34%2044,34%2037,14%2030,34%2030.044,34'/%3e%3cpolygon%20fill='%23f5bc00'%20points='39.45,21%2034.55,21%2032.685,26.329%2036.974,29.748%2037,29.732%2037.026,29.748%2041.315,26.329'/%3e%3c/g%3e%3c/svg%3e" width="48" height="48" alt
-										class="mx-auto">
-									<h1 class="py-4 text-center font-bold text-link dark:text-white text-lg">50+ UI
-										Components</h1>
-									<p class="text-lightmuted dark:text-darklink text-base font-normal text-center">A
-										rich collection for seamless user experiences.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					{% include process.html %}
 					<!-- Process End -->
 
 					<!-- Metrics Start -->
@@ -1687,87 +1537,8 @@
 					<!-- Feature Banner End -->
 
 					<!-- Footer Section -->
-					<footer>
-					    <div class="container-md px-4 lg:py-24 md:py-20 py-12">
-					        <div class="grid grid-cols-12 gap-6">
-					            <div class="lg:col-span-3 sm:col-span-6 col-span-12">
-					                <h4 class="text-lg text-link dark:text-white font-semibold mb-8">Company and team</h4>
-					                <div class="flex flex-col gap-4">
-					                    <a href='./ui-cards.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Cards</a>
-					                    <a href='./page-pricing.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Pricing</a>
-					                    <a href='./page-account-settings.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Account
-					                        Settings</a>
-					                    <a href='./page-faq.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">FAQ</a>
-					                    <a href='./page-user-profile.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">User
-					                        Profile</a>
-					                </div>
-					            </div>
-					            <div class="lg:col-span-3 sm:col-span-6 col-span-12">
-					                <h4 class="text-lg text-link dark:text-white font-semibold mb-8">Features</h4>
-					                <div class="flex flex-col gap-4">
-					                    <a href='./widgets-banners.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Banners</a>
-					                    <a href='./widgets-charts.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Charts</a>
-					                    <a href='./widgets-data.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Data</a>
-					                    <a href='./widgets-feeds.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Feeds</a>
-					                    <a href='./ui-button.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Buttons</a>
-					                </div>
-					            </div>
-					            <div class="lg:col-span-3 sm:col-span-6 col-span-12">
-					                <h4 class="text-lg text-link dark:text-white font-semibold mb-8">Resources</h4>
-					                <div class="flex flex-col gap-4">
-					                    <a href='./form-inputs.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Form
-					                        Input</a>
-					                    <a href='./table-basic.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Tables</a>
-					                    <a href='./table-miscellaneous.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Miscellaneous</a>
-					                    <a href='./form-input-grid.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Form
-					                        Grid</a>
-					                    <a href='./app-invoice.html'
-					                        class="text-sm font-medium text-lightmuted hover:text-primary dark:text-darklink block">Invoice
-					                        App</a>
-					                </div>
-					            </div>
-					            <div class="lg:col-span-3 sm:col-span-6 col-span-12">
-					                <h4 class="text-lg text-link dark:text-white font-semibold mb-8">Followers</h4>
-					                <div class="flex items-center gap-5">
-					                    <a href="javascript:void(0)">
-					                        <img src="data:image/svg+xml,%3csvg%20width='22'%20height='22'%20viewBox='0%200%2022%2022'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_22103_22216)'%3e%3cpath%20d='M22%2011C22%204.92422%2017.0758%200%2011%200C4.92422%200%200%204.92422%200%2011C0%2016.1562%203.55352%2020.4875%208.34453%2021.6777V14.3602H6.07578V11H8.34453V9.55195C8.34453%205.80938%2010.0375%204.07344%2013.7156%204.07344C14.4117%204.07344%2015.6148%204.21094%2016.109%204.34844V7.39062C15.8512%207.36484%2015.4%207.34766%2014.8371%207.34766C13.0324%207.34766%2012.3363%208.03086%2012.3363%209.80547V11H15.9285L15.3098%2014.3602H12.332V21.9184C17.7805%2021.2609%2022%2016.6246%2022%2011Z'%20fill='%235D7287'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_22103_22216'%3e%3crect%20width='22'%20height='22'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" width="24" height="24" alt>
-					                    </a>
-					                    <a href="javascript:void(0)">
-					                        <img src="data:image/svg+xml,%3csvg%20width='22'%20height='22'%20viewBox='0%200%2022%2022'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_22103_22218)'%3e%3cpath%20d='M19.7398%206.51836C19.7527%206.71172%2019.7527%206.90938%2019.7527%207.10273C19.7527%2013.0625%2015.2152%2019.9332%206.92227%2019.9332C4.36563%2019.9332%201.99375%2019.1941%200%2017.9094C0.360937%2017.9523%200.713281%2017.9652%201.08711%2017.9652C3.19687%2017.9652%205.13477%2017.252%206.68594%2016.0402C4.70508%2015.9973%203.04219%2014.6996%202.4707%2012.9121C2.75%2012.9551%203.0293%2012.9809%203.32148%2012.9809C3.72539%2012.9809%204.1293%2012.925%204.50742%2012.8262C2.44063%2012.4094%200.89375%2010.5918%200.89375%208.40039V8.34453C1.49531%208.67969%202.19141%208.89023%202.93047%208.91602C1.71445%208.1082%200.919531%206.72461%200.919531%205.16055C0.919531%204.32266%201.14297%203.55352%201.53398%202.8832C3.75547%205.62031%207.08984%207.40781%2010.8324%207.60117C10.7637%207.26602%2010.7207%206.91797%2010.7207%206.56992C10.7207%204.08633%2012.7316%202.0625%2015.2281%202.0625C16.5258%202.0625%2017.6988%202.6082%2018.5238%203.48477C19.5422%203.29141%2020.5219%202.91328%2021.3855%202.39766C21.0504%203.44609%2020.3371%204.32266%2019.4047%204.88125C20.3113%204.78242%2021.1922%204.5332%2022%204.18516C21.3855%205.07891%2020.6164%205.87383%2019.7398%206.51836Z'%20fill='%235D7287'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_22103_22218'%3e%3crect%20width='22'%20height='22'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" width="24" height="24" alt>
-					                    </a>
-					                    <a href="javascript:void(0)">
-					                        <img src="data:image/svg+xml,%3csvg%20width='20'%20height='22'%20viewBox='0%200%2020%2022'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_22103_22220)'%3e%3cpath%20d='M9.62861%206.0583C6.8958%206.0583%204.6915%208.2626%204.6915%2010.9954C4.6915%2013.7282%206.8958%2015.9325%209.62861%2015.9325C12.3614%2015.9325%2014.5657%2013.7282%2014.5657%2010.9954C14.5657%208.2626%2012.3614%206.0583%209.62861%206.0583ZM9.62861%2014.2052C7.8626%2014.2052%206.41885%2012.7657%206.41885%2010.9954C6.41885%209.2251%207.8583%207.78564%209.62861%207.78564C11.3989%207.78564%2012.8384%209.2251%2012.8384%2010.9954C12.8384%2012.7657%2011.3946%2014.2052%209.62861%2014.2052ZM15.9192%205.85635C15.9192%206.49658%2015.4036%207.00791%2014.7677%207.00791C14.1274%207.00791%2013.6161%206.49229%2013.6161%205.85635C13.6161%205.22041%2014.1317%204.70478%2014.7677%204.70478C15.4036%204.70478%2015.9192%205.22041%2015.9192%205.85635ZM19.1892%207.0251C19.1161%205.48252%2018.7638%204.11611%2017.6337%202.99033C16.5079%201.86455%2015.1415%201.51221%2013.5989%201.43486C12.0091%201.34463%207.24385%201.34463%205.654%201.43486C4.11572%201.50791%202.74932%201.86025%201.61924%202.98604C0.48916%204.11182%200.141113%205.47822%200.0637695%207.0208C-0.0264648%208.61064%20-0.0264648%2013.3759%200.0637695%2014.9657C0.136816%2016.5083%200.48916%2017.8747%201.61924%2019.0005C2.74932%2020.1263%204.11143%2020.4786%205.654%2020.556C7.24385%2020.6462%2012.0091%2020.6462%2013.5989%2020.556C15.1415%2020.4829%2016.5079%2020.1306%2017.6337%2019.0005C18.7595%2017.8747%2019.1118%2016.5083%2019.1892%2014.9657C19.2794%2013.3759%2019.2794%208.61494%2019.1892%207.0251ZM17.1353%2016.6716C16.8001%2017.5138%2016.1513%2018.1626%2015.3048%2018.5021C14.0372%2019.0048%2011.0294%2018.8888%209.62861%2018.8888C8.22783%2018.8888%205.21572%2019.0005%203.95244%2018.5021C3.11025%2018.1669%202.46143%2017.5181%202.12197%2016.6716C1.61924%2015.404%201.73525%2012.3962%201.73525%2010.9954C1.73525%209.59463%201.62354%206.58252%202.12197%205.31924C2.45713%204.47705%203.10596%203.82822%203.95244%203.48877C5.22002%202.98603%208.22783%203.10205%209.62861%203.10205C11.0294%203.10205%2014.0415%202.99033%2015.3048%203.48877C16.147%203.82393%2016.7958%204.47275%2017.1353%205.31924C17.638%206.58682%2017.522%209.59463%2017.522%2010.9954C17.522%2012.3962%2017.638%2015.4083%2017.1353%2016.6716Z'%20fill='%235D7287'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_22103_22220'%3e%3crect%20width='19.25'%20height='22'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" width="24" height="24" alt>
-					                    </a>
-					                </div>
-					            </div>
-					        </div>
-					    </div>
-					    <div class="container-md px-4 py-8 lg:py-10 border-t border-border dark:border-darkborder">
-					        <div class="flex md:flex-row flex-col gap-3 justify-between items-center">
-					            <div class="flex items-center gap-2">
-					                <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAZVQTFRFAAAAE965E965E965E965E965Gde/IM/FE965E965E965E965E965XYf/WYz7RKTnE965XYf/XYf/XYf/XIj+Gta/E965XYf/XYf/OLLcINbKSb7/XYf/WYz7FN26G9nESb7+Sb7/XYf/K8LQE965E965E965E965E965H9fJSb7/Sb7/XYf/XYf/XYf/XYf/E965E965E965I9XNSb7/XYf/XYf/XYf/KtDXSb7/Sb7/XYf/XYf/Sb7/Sb7/XYf/XYf/XYf/Sb7/Sb7/XYf/XYf/Sb7/Sb7/XYf/XYf/Sb7/Sb7/XYf/XYf/Sb7/Sb7/XYf/XYf/Sb7/Sb7/XYf/Sb7/Sb7/Sb7/XYf/XYf/Sb7/Sb7/XYf/XYf/XYf/S7j/Sb7/XYf/XYf/XYf/XYf/XYf/XYf/XYj/TLX/Sb7/Sb7/XYf/XYf/XYf/XYf/XYf/XYf/XYf/TrD/Sb7/XYf/UKv/Sb7/XYf/XYf/XYf/Sb7/XYf/XYf/XYf/XYf/XYf/XYf/XYf/XYf/XYf/XYf/XYf/XYf/5lcu+AAAAId0Uk5TAAUfNUAeDHDB/92UOEva/8kFof/+/4QMwf+OAqT7/8L7jVnig1JLluu//0oE5/FTCoL5uthX8iol8VG5XFei9eYB1uwakYwSOGVkMS1kaC8gkJMb3AXk7a9peKho/E/hUgfi/nZV8+fe1QFUnkxYi8zu0kaUyZkCqrcMWuvIQrjvoEUePzMXYGfSVgAAAYZJREFUeJxjZMADGJHZIPAbmyQbUAKq4gu6JC8j4y+YGPvnv8iSgkBdSDoYeF8hJMXBNrF9QNgmyPgUJinzHURyMb6GyYkxMt6HSip9hAgJgJ37kIFBASjKeBUsqcP4DCQlzXgRRBkA5UEGcT1/CpI0vQcSVGY8CTXTghFsksAxkKT1DRBb8wjcNbZvQaTIIZCk/RUgU5dxP8KtTi+AhOReoKTLeRDfaDdSsLk9AZGyOxkZPE6DWGbbkSS9HoBIxa2MDD7HQSyrzUiSfndApOpGRoaAwyCW3XokySCIE9cyMji+BYWU41uEg0IZwU488hTo2giwW9yWwyWjLoBIw6Ugr8SA3eLFuAgq5yMMceICkGQi40YQJ4Dx73wQnQoMv0NA3zNOAwd89gqIlmBQamBczMAQx7iDwbMXGmUl8xlQgY4ZYxcDVLKccTaabBpjG0ySQUf1EIpcJHcnAwMigVUzTodLZTE2QRjwpCkYIrUeFBq5jIx1MDHkRM3QDHTsbqSoQ5FEBwC+2VYdQlMIpgAAAABJRU5ErkJggg==' alt="logo" height="24" />
-					                <p class="text-base text-lightmuted dark:text-darklink">All rights reserved by TailwindAdmin.</p>
-					            </div>
-					            <p class="text-base text-lightmuted dark:text-darklink flex items-center gap-1">Produced by
-					                <a class="text-primary" href="https://tailwind-admin.com/">Tailwind Admin</a>
-					            </p>
-					        </div>
-					    </div>
-					</footer>				</div>
+					{% include footer.html %}			
+				</div>
 				<!-- Main Content End -->
 			</div>
 		</div>

@@ -10,6 +10,7 @@ _site/
 # Bundler / Ruby Gems
 # ========================
 /vendor/bundle
+Gemfile
 Gemfile.lock
 
 # ========================

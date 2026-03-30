@@ -1,0 +1,31 @@
+# ========================
+# Jekyll Build / Generated Files
+# ========================
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# ========================
+# Bundler / Ruby Gems
+# ========================
+/vendor/bundle
+Gemfile.lock
+
+# ========================
+# OS / Editor / Misc
+# ========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log
+
+# ========================
+# Optional: Node / npm files
+# ========================
+node_modules/
+yarn.lock
+package-lock.json

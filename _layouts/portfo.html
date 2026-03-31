@@ -15,67 +15,7 @@
 				
 				<!-- Announcement Bar End -->
 				<!--  Header Start -->
-				<header id='main-header'
-					class="sticky top-header top-0 inset-x-0 z-5 flex flex-wrap md:justify-start md:flex-nowrap text-sm px-0 sm:py-6 py-3">
-					<div class="container flex items-center justify-between">
-
-						<div class="order-2">
-							<div class="brand-logo d-flex align-items-center justify-center">
-							  <a href="./index.html" class="text-nowrap logo-img">
-							    <img src="./assets/images/dark-logo.svg" class="dark:hidden block rtl:hidden" alt="Logo-Dark" />
-							    <img src="./assets/images/light-logo.svg" class="dark:block hidden rtl:hidden rtl:dark:hidden"
-							      alt="Logo-light" />
-							
-							    <img src="./assets/images/dark-logo-rtl.svg" class="dark:hidden hidden rtl:block rtl:dark:hidden"
-							      alt="Logo-Dark" />
-							    <img src="./assets/images/light-logo-rtl.svg" class="dark:hidden hidden rtl:hidden rtl:dark:block"
-							      alt="Logo-light" />
-							  </a>
-							</div>						</div>
-						<!---Lp Mobile Toggle Icons--->
-						<div class="xl:hidden order-1">
-							<a class="rounded-full icon-hover h-10 w-10 flex justify-center text-link dark:text-darklink items-center hover:text-primary  relative hover:bg-lightprimary dark:hover:bg-darkprimary "
-								data-hs-overlay="#application-sidebar-lp">
-								<i class="ti ti-menu-2 text-xl relative "></i>
-							</a>
-						</div>
-
-						<!-- Menu-->
-						<ul class="xl:flex hidden items-center gap-2 order-3">
-							<li>
-								<a href="./frontend-aboutpage.html"
-									class='text-[15px] py-[6px] px-4 text-link dark:text-darklink hover:text-primary font-medium'>About
-									Us</a>
-							</li>
-							<li>
-								<a href="./frontend-blogpage.html"
-									class='text-[15px] py-[6px] px-4 hover:text-primary font-medium'>Blog</a>
-							</li>
-							<li>
-								<a href="./frontend-portfoliopage.html"
-									class='text-[15px] py-[6px] px-4 bg-lightprimary dark:bg-lightprimary text-primary dark:text-primary rounded-md flex items-center gap-2 hover:text-primary font-medium'>
-									Portfolio
-									<span
-										class="inline-flex items-center gap-x-1.5 py-1 px-2 rounded-md text-xs font-medium bg-lightprimary! dark:bg-darkprimary! text-primary dark:text-primary">New</span>
-								</a>
-							</li>
-							<li>
-								<a href="./index.html"
-									class='text-[15px] py-[6px] px-4 text-link dark:text-darklink hover:text-primary font-medium'>Dashboard</a>
-							</li>
-							<li>
-								<a href="./frontend-pricingpage.html"
-									class='text-[15px] py-[6px] px-4 text-link dark:text-darklink hover:text-primary font-medium'>Pricing</a>
-							</li>
-							<li>
-								<a href="./frontend-contactpage.html"
-									class='text-[15px] py-[6px] px-4 text-link dark:text-darklink hover:text-primary font-medium'>Contact</a>
-							</li>
-
-						</ul>
-						<a href="./authentication-login.html" class="btn order-4">Login</a>
-					</div>
-				</header>
+				{% include header1.html %}
 
 				<!-- Main Content -->
 				<div class="max-w-full">
